@@ -3,5 +3,6 @@ module.exports = {
         {
             script:'npx serve -s'
         }
-    ]
+    ],
+    runtimeCompiler : true
 }
