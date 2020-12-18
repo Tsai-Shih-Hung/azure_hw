@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="header" class="d-flex justify-content-end bg-primary"> 
+    <div id="header" class="d-flex justify-content-end bg-tku"> 
       <div class="mx-3"><a href="#" class="text-dark">首頁</a></div>
       <div class="mx-3"><a href="#" class="text-dark">首頁</a></div>
     </div>
