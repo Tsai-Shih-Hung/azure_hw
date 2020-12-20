@@ -15,22 +15,20 @@
     >
       <!-- Text slides with image -->
       <b-carousel-slide
-        caption="First"
-        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="http://www.im.tku.edu.tw/wp-content/uploads/2019/11/1030.jpg"
+        
+        :img-src="require(`@/assets/picuture/1031new.jpg`)"
         id='picture'
       ></b-carousel-slide>
 
       <b-carousel-slide
-        caption="First slide"
-        img-src="http://www.im.tku.edu.tw/wp-content/uploads/2019/11/1029.jpg"
+        
+        :img-src="require(`@/assets/picuture/1030new.jpg`)"
         id='picture'
       ></b-carousel-slide>
 
       <!-- Slides with image only -->
       <b-carousel-slide
-        caption="First slide"
-        img-src="../assets/picture/1029new.jpg"
+        :img-src="require(`@/assets/picuture/1029new.jpg`)"
         id='picture'
       ></b-carousel-slide>
       

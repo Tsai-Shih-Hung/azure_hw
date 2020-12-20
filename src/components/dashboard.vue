@@ -4,7 +4,7 @@
         dashboard test
         
     <div>
-    <navbar/>
+    <sidebar/>
     </div>
 
     <div>
@@ -17,9 +17,11 @@
 
 <script>
 import sidebar from './sidebar.vue';
+
 export default {
      components:{
-        sidebar,     
+        sidebar,
+            
     }
 }
 </script>

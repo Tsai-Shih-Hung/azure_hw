@@ -1,21 +1,19 @@
 <template>
 <div >
-    <div class="header">
-        <div class="alert alert-danger" role="alert">
-        A simple primary alert—check it out!
-      </div>
+    
+        
     <div class='main'></div>
 
     <div class="footer"></div> 
 
-      <div id="app" class="container">
+      <!-- <div id="app" class="container">
               <form id="form" class="form-inline" v-on:submit.prevent="add">
                 <div class="form-group">
                   <input type="text" id="bookTitle" class="form-control" v-model="text.text">
                 </div>
                 <input type="submit" class="btn btn-primary" value="Add">
               </form>
-        </div>
+        </div> -->
     </div>
   </div>
 </template>
@@ -40,9 +38,7 @@ import toastr from 'toastr'
 
 export default {
   name: 'HelloWorld',
-  firebase: {
-    text: textRef
-  },
+  
   props: {
     msg: String,
   },

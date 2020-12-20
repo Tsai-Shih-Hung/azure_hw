@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-//import dashboard from '../components/dashboard.vue';
-import container from '../components/container.vue';
-
-
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -15,11 +11,17 @@ export default new VueRouter({
             component: ()=>import('../components/dashboard.vue'),    
             children:[
                 {
-                    path:'/container',
+                    path:'container',
                     name:'container',
                     component:()=>import('../components/container.vue'),
                 }
             ]  
+        },
+   
+        {
+            name:'toolbar',
+            path:'/toolbar',
+            component:()=>import('../components/toolbar.vue'),
         }
     ]
 })
