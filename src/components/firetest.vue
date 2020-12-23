@@ -55,6 +55,8 @@ export default {
       let vm=this;
       textRef.push({content:'要記得吃藥'});
       console.log(vm.documents);
+      console.log(vm.documents[1][".key"]);
+      console.log(vm.documents[2][".key"])
       textRef.once('value',function(snapshot){
       var str=snapshot.val();
       console.log('str',str);
@@ -75,16 +77,15 @@ export default {
       },
       edit(item,key){
         let vm =this;
-        console.log('item,key',item,key);
-        
+        console.log('item,key',item,key);    
         vm.content=item.content;
         vm.quill=true;
       },
       conform(item,key){
         let vm =this;
-        console.log('confrom',item,key,vm.content);
-        console.log('item.id',key);
-        textRef.child(key).update({content:vm.content});
+        //console.log('confrom',item,key,vm.content);
+        //console.log('item.id',key);
+        textRef.child(vm.documents[key][".key"]).update({content:vm.content});
         console.log('success');
         vm.quill=false;
       },
