@@ -12,7 +12,7 @@
     </div>
   <div>
     <div>
-      <container/>
+      container
     </div>
   <div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -36,6 +36,7 @@
     
   </div>
   <router-view></router-view>
+  <firetest/>
   </div>
   
 </template>
@@ -44,18 +45,20 @@
 //import HelloWorld from './components/HelloWorld.vue';
 //import navbar from './components/navbar.vue';
 import carousel from './components/carousel.vue';
-import container from './components/container.vue';
+//import container from './components/container.vue';
 //import dashboard from './components/dashboard.vue';
 import navbar from './components/navbar.vue'
+//import toolbar from './components/toolbar.vue';
+import firetest from'./components/firetest.vue';
 
 
 export default {
   name: 'App',
   components: {
-    //HelloWorld,
+    firetest,
     carousel,
-    container,
     navbar,
+    //toolbar,
   },
 
 };
