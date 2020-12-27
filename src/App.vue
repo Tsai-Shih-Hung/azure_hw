@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="header" class="d-flex justify-content-end "> 
-      <div class="mx-3"><a href="#" class="text-dark">淡江資管首頁</a></div>
-      <div class="mx-3"><a href="#" class="text-dark">淡江大學首頁</a></div>
+      <div class="mx-3"><a href="http://www.im.tku.edu.tw/" class="text-dark">淡江資管首頁</a></div>
+      <div class="mx-3"><a href="http://www.tku.edu.tw/" class="text-dark">淡江大學首頁</a></div>
     </div>
   <div>
       <navbar/>
@@ -12,18 +12,22 @@
     </div>
   <div>
     <div>
-      container
+      <router-view></router-view> 
     </div>
   <div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 
     <div id="footer" class="d-flex justify-content-center pt-2" >
-      <div id="footer_container" >
-        <div class='first_line'>
-            <span>電話: (02)2621-5656 內線 2645 或 2648</span>
-            <span>傳真: (02)2620-9737</span>
-            <span>Email: tlmx@oa.tku.edu.tw</span>
+      <div id="footer_container">
+        <div class="container">
+          <div class="row first_line d-flex justify-content-around">
+            
+            <div class="col-md-4"><i class="fas fa-phone-alt" ></i> 電話: (02)2621-5656 內線 2645 或 2648   </div>
+            <div class="col-md-4"><i class="fas fa-fax"></i> 傳真: (02)2620-9737   </div>
+            <div class="col-md-4"><i class="fas fa-envelope"></i> Email: tlmx@oa.tku.edu.tw  </div>
+          
+         </div>
         </div>
         <ul >
           <li >網頁維護: 簡詩婷, 邱瑜瑩</li>
@@ -33,11 +37,9 @@
         </ul>   
     </div>
     </div>
-    
   </div>
-  <router-view></router-view>
-  <firetest/>
-  </div>
+  
+</div>
   
 </template>
 
@@ -45,20 +47,28 @@
 //import HelloWorld from './components/HelloWorld.vue';
 //import navbar from './components/navbar.vue';
 import carousel from './components/carousel.vue';
-//import container from './components/container.vue';
+import container from './components/container.vue';
 //import dashboard from './components/dashboard.vue';
 import navbar from './components/navbar.vue'
 //import toolbar from './components/toolbar.vue';
-import firetest from'./components/firetest.vue';
+
+
 
 
 export default {
   name: 'App',
   components: {
-    firetest,
+    container,
     carousel,
     navbar,
-    //toolbar,
+    data:function(){
+             return {
+                 changequill: false ,
+                 title:'',
+                 addtitle:'',
+                 addcontent:'', 
+             }
+        }
   },
 
 };
@@ -72,7 +82,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  //text-align: center;
   color: #2c3e50;
   margin-top: px;
 }
@@ -83,6 +93,7 @@ export default {
 
 #footer_container{
   width:800px;
+  color:white;
   
 }
 

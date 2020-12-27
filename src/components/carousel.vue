@@ -16,19 +16,19 @@
       <!-- Text slides with image -->
       <b-carousel-slide
         
-        :img-src="require(`@/assets/picuture/1031new.jpg`)"
+        :img-src="require(`@/assets/picuture/1031-1.jpg`)"
         id='picture'
       ></b-carousel-slide>
 
       <b-carousel-slide
         
-        :img-src="require(`@/assets/picuture/1030new.jpg`)"
+        :img-src="require(`@/assets/picuture/1030-1.jpg`)"
         id='picture'
       ></b-carousel-slide>
 
       <!-- Slides with image only -->
       <b-carousel-slide
-        :img-src="require(`@/assets/picuture/1029new.jpg`)"
+        :img-src="require(`@/assets/picuture/1029-2.jpg`)"
         id='picture'
       ></b-carousel-slide>
       
@@ -62,7 +62,7 @@
 
 #picture {
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
 
 

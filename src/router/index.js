@@ -6,22 +6,35 @@ Vue.use(VueRouter)
 export default new VueRouter({
     routes:[
         {
-            name:'dashboard',
-            path:'/dashboard',
-            component: ()=>import('../components/dashboard.vue'),    
-            children:[
-                {
-                    path:'container',
-                    name:'container',
-                    component:()=>import('../components/container.vue'),
-                }
-            ]  
-        },
-   
+            name:'container',
+            path:'/',
+            component: ()=>import('../components/container.vue'),    
+        },   
         {
-            name:'toolbar',
-            path:'/toolbar',
-            component:()=>import('../components/toolbar.vue'),
+            path:'/child/:id',
+             name:'child',
+            component:()=>import('../components/child.vue'),
+        },
+        {
+            name:'freshman',
+            path:'/freshman_in/:id',
+            component:()=>import('../components/freshman_in.vue'),
+        },
+        {
+            name:'freshman_out',
+            path:'/freshman_out',
+            component:()=>import('../components/freshman_out.vue'),
+        },
+        {
+            name:'department_in',
+            path:'/department_in/:id',
+            component:()=>import('../components/department_in.vue'),
+        },
+        {
+            name:'department_out',
+            path:'/department_out',
+            component:()=>import('../components/department_out.vue'),
         }
+        
     ]
 })

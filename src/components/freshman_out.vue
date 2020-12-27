@@ -3,14 +3,14 @@
      <div class="container">
        <div class="row">
          <div class="col-md-9 mt-3 mb-5">
-          <div class="ml-3 topic d-flex justify-content-between">
-              最新消息
+           <div class="ml-3 topic d-flex justify-content-between">
+              大一新鮮人專區
             <div>
             <button type="button" class="btn btn-secondary " @click.prevent='add()'>新增</button>
             <button type="button" class="btn btn-secondary " @click.prevent='conform()'>確定新增</button>
             </div>
-      </div>
-           <div class="mb-3"  v-if="changequill==true">
+        </div>
+          <div class="mb-3"  v-if="changequill==true">
                         <label for="exampleInputEmail1" class="form-label">標題</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp" v-model="title">                       
                     </div>
@@ -23,7 +23,6 @@
                             @ready="onEditorReady($event)"
                             v-if="changequill==true"
             />
-
 
            <div class="outside ml-2 m-3 pt-3" v-for="(item,key) in documents" :key="item.id" @click="changesite(item,key)">
               <div class="title" v-text="item.title"></div>
@@ -55,14 +54,11 @@
                                 <li><a href="https://sites.google.com/a/gms.tku.edu.tw/tku-ios-club/">TKU iOS CLUB 資訊顧問社</a></li> 
                                 <li><a href="https://www.facebook.com/Imna%E7%B6%B2%E8%B7%AF%E7%AD%96%E9%80%B2%E6%9C%83-1751956238408832/?modal=admin_todo_tour&notif_id=1556726982752057&notif_t=page_invite">資管網路策進會</a></li>   
                                 <li><a href="https://www.facebook.com/TKUB310">資訊應用策進會</a></li>  
-                        </ul>  
+                        </ul>
                     </div>
-        </div>
-
-
-      </div>
+            </div>
        </div>
-      
+      </div>
   </div>
 </template>
 <script>
@@ -74,8 +70,7 @@ import 'quill/dist/quill.bubble.css'
  
 import { quillEditor } from 'vue-quill-editor'
 
-
-var textRef=db.ref('documents');
+var textRef=db.ref('freshman');
 
 export default {
   props:['addtitle','addcontent','changequill','title'],
@@ -83,15 +78,14 @@ export default {
     return {
       documents: [],
       temp:[],
-       content: '',
+      content: '',
             editorOption: {
         // Some Quill options...
              },
-      
     }
   },
   firebase: {
-    documents: db.ref('documents'),
+    documents: db.ref('freshman'),
   }, 
   methods:{
     show(){
@@ -109,9 +103,9 @@ export default {
         let vm =this;
           //console.log('123');
           //console.log(vm.documents[key][".key"]);
-          vm.$router.push({ path: `/child/${vm.documents[key][".key"]}`})
+          vm.$router.push({ path: `/freshman_in/${vm.documents[key][".key"]}`})
       },
-      add(){
+     add(){
           
           let vm =this;
           vm.changequill=true;
@@ -124,7 +118,7 @@ export default {
           vm.content="";
           vm.changequill=false;
       },
-       onEditorBlur(quill) {
+      onEditorBlur(quill) {
       //console.log('editor blur!', quill)
       },
       onEditorFocus(quill) {
@@ -137,14 +131,12 @@ export default {
         //console.log('editor change!', quill, html, text)
         this.content = html
       }
-
   },
    computed: {
       editor() {
         return this.$refs.myQuillEditor.quill
       }
-   
-  },
+    },
 }
 </script>
 
